@@ -13,8 +13,12 @@ library(tidyverse)
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-
 ## Code exercises
+
+### Here is the Palmer Penguins dataset
+```{r penguin data}
+penguins
+```
 
 ### Exercise 
 
