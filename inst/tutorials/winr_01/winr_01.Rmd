@@ -1,5 +1,5 @@
 ---
-title: "AdventuR 1"
+title: "winr_01"
 output: 
   learnr::tutorial:
 
