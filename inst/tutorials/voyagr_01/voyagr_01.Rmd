@@ -8,9 +8,11 @@ runtime: shiny_prerendered
 
 ```{r setup, include=FALSE}
 library(learnr)
+library(gradethis)
 library(palmerpenguins)
 library(tidyverse)
 knitr::opts_chunk$set(echo = FALSE)
+tutorial_options(exercise.checker = gradethis::grade_learnr)
 ```
 
 ## Code exercises
@@ -30,6 +32,11 @@ Create a ggplot2 graph of penguin mass vs. flipper length.
 ```{r penguin-plot-hint-1}
 ggplot(data = penguins, aes(x = _______, y = _______)) + 
   geom_point()
+```
+
+```{r penguin-plot-check}
+grade_code ("Good job!")
+
 ```
 
 ```{r penguin-plot-hint-2}
