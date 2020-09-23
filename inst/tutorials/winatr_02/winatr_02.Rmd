@@ -1,0 +1,65 @@
+---
+title: "winr_02"
+output: 
+  learnr::tutorial:
+
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(gradethis)
+library(tidyverse)
+library(lubridate)
+library(palmerpenguins)
+knitr::opts_chunk$set(echo = FALSE)
+tutorial_options(exercise.checker = gradethis::grade_learnr)
+
+
+```
+
+
+
+
+# Code exercises for Group workshop 1
+You may want a copy of this weeks worksheet to hand to help you. Each exercise has some code hints, try not to use this before trying to solve the problems as a group. When prompted jot down the answers you have submitted as these will be part of the quiz hosted on Blackboard. These quizzes are vital for me to track how everyone is getting on, and to indicate areas of the course that we may need to revisit. 
+
+
+## Section 2 - working with a pre-existing dataset
+### Here is the Palmer Penguins dataset
+
+```{r penguin data}
+penguins
+```
+
+```{r fig1, echo = FALSE, out.width = "100%"}
+knitr::include_graphics("winr_02_files/figure-html/penguins.png")
+```
+
+
+### Exercise 1
+
+Create a ggplot2 graph of penguin mass vs. flipper length. 
+```{r penguin-plot, exercise=TRUE}
+
+```
+
+```{r penguin-plot-hint-1}
+ggplot(data = penguins, aes(x =  , y =  )) + 
+  geom_point()
+```
+
+```{r penguin-plot-check}
+grade_code ("Good job!")
+
+```
+
+```{r penguin-plot-hint-2}
+ggplot(data = penguins, aes(x = body_mass_g, y =  )) + 
+  geom_point()
+```
+
+```{r penguin-plot-solution}
+ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm)) + 
+  geom_point()
+```
