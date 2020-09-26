@@ -1,5 +1,5 @@
 ---
-title: "winr_01"
+title: "winatr01"
 output: 
   learnr::tutorial:
     version: 1
@@ -20,7 +20,7 @@ y <- c(97.1795, 96.0256, 94.4872, 91.4103, 88.3333, 84.8718, 79.8718, 77.5641, 7
 
 workshop_dataset <- matrix(c(x,y),ncol=2)
 
-edidiv <- read_csv("winr_01_files/figure-html/edidiv.csv")
+edidiv <- read_csv("winatr01_files/figure-html/edidiv.csv")
 
 ```
 
@@ -132,12 +132,8 @@ grade_code(
 ## Section 2 - Diversity measures
 
 The material you need for this session has already been loaded into our workspace, you can call it by typing `edidiv`
-```{r edidiv, eval=FALSE}
-edidiv <- read_csv("winr_01_data/edidiv.csv") 
-###Filepaths are always relative depending on how your directories and folders are set up. This file path sends R to look inside a subfolder and find the file edidiv.csv
-```
 
-Our `edidiv` object has occurrence records of various species collected in Edinburgh from 2000 to 2016. To explore Edinburgh’s biodiversity, we will create a graph showing how many species were recorded in each taxonomic group. You could calculate species richness in Excel, but that has several disadvantages, especially when working with large datasets like ours - you have no record of what you clicked on, how you sorted the data and what you copied/deleted - mistakes can slip by without you noticing. In R, on the other hand, you have your script, so you can go back and check all the steps in your analysis.
+Our `edidiv` object has occurrence records of various species collected in Edinburgh from 2000 to 2016. To explore `edi`nburgh’s bio`div`ersity, we will create a graph showing how many species were recorded in each taxonomic group. You could calculate species richness in Excel, but that has several disadvantages, especially when working with large datasets like ours - you have no record of what you clicked on, how you sorted the data and what you copied/deleted - mistakes can slip by without you noticing. In R, on the other hand, you have your script, so you can go back and check all the steps in your analysis.
 
 Next up check that the data was imported correctly with the `head()` function
 
@@ -264,7 +260,7 @@ barplot(biodiv)
 ```
 
 ```{r fig1, echo = FALSE, out.width = "100%", fig.cap="This is what you want to make"}
-knitr::include_graphics("winr_01_files/figure-html/Species_rich.jpeg")
+knitr::include_graphics("winatr01_files/figure-html/Species_rich.jpeg")
 ```
 
 
@@ -343,6 +339,6 @@ barplot(wingspan, xlab="Bird species", ylab="Average wingspan (cm)", ylim=c(0,20
 
 
 ```{r fig2, echo = FALSE, out.width = "100%", fig.cap="This is what you want to make"}
-knitr::include_graphics("winr_01_files/figure-html/Rplot01.jpeg")
+knitr::include_graphics("winatr01_files/figure-html/Rplot01.jpeg")
 ```
 

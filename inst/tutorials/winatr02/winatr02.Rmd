@@ -1,5 +1,5 @@
 ---
-title: "winr_02"
+title: "winatr02"
 output: 
   learnr::tutorial:
 
@@ -21,11 +21,11 @@ tutorial_options(exercise.checker = gradethis::grade_learnr)
 
 
 
-# Code exercises for Group workshop 1
+# Code exercises for Group workshop 2
 You may want a copy of this weeks worksheet to hand to help you. Each exercise has some code hints, try not to use this before trying to solve the problems as a group. When prompted jot down the answers you have submitted as these will be part of the quiz hosted on Blackboard. These quizzes are vital for me to track how everyone is getting on, and to indicate areas of the course that we may need to revisit. 
 
 
-## Section 2 - working with a pre-existing dataset
+## Section 1 - working with a pre-existing dataset
 ### Here is the Palmer Penguins dataset
 
 ```{r penguin data}
@@ -33,7 +33,7 @@ penguins
 ```
 
 ```{r fig1, echo = FALSE, out.width = "100%"}
-knitr::include_graphics("winr_02_files/figure-html/penguins.png")
+knitr::include_graphics("winatr02_files/figure-html/penguins.png")
 ```
 
 
