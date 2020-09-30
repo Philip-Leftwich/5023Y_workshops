@@ -25,8 +25,8 @@ tutorial_options(exercise.checker = gradethis::grade_learnr)
 You may want a copy of this weeks worksheet to hand to help you. Each exercise has some code hints, try not to use this before trying to solve the problems as a group. When prompted jot down the answers you have submitted as these will be part of the quiz hosted on Blackboard. These quizzes are vital for me to track how everyone is getting on, and to indicate areas of the course that we may need to revisit. 
 
 
-## Section 1 - working with a pre-existing dataset
-### Here is the Palmer Penguins dataset
+## Section 1 - Geom points
+### Here is the Palmer Penguins dataset  -we first saw this dataset in Week One.
 
 ```{r penguin data}
 penguins
@@ -39,7 +39,7 @@ knitr::include_graphics("winatr02_files/figure-html/penguins.png")
 
 ### Exercise 1
 
-Create a ggplot2 graph of penguin mass vs. flipper length. 
+Create a ggplot2 graph of penguin mass on the x axis vs. flipper length on the y axis with the geom_point function. 
 ```{r penguin-plot, exercise=TRUE}
 
 ```
@@ -62,4 +62,102 @@ ggplot(data = penguins, aes(x = body_mass_g, y =  )) +
 ```{r penguin-plot-solution}
 ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm)) + 
   geom_point()
+```
+
+## Section 2 - Colouring by species
+
+
+### Exercise 2
+We can see that there is an overall positive correlation between body mass and flipper length. Let's see how those trends look when we colour the points by species. Remember you can put this argument globally (within ggplot so it effects all geoms) or within geom_point(). For now I would like you to put this as a global argument
+
+```{r penguin2, exercise = TRUE}
+
+```
+
+```{r penguin2-hint-1}
+ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm, colour= )) + 
+  geom_point()
+```
+
+
+```{r penguin2-solution}
+ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm, colour=species)) + 
+  geom_point()
+```
+
+```{r penguin2-check}
+grade_code ("Nice!")
+
+```
+
+### Exercise 3
+
+Ok lets add some trendlines to this data, can you recall from your worksheet how to do this?
+
+```{r penguin3, exercise=TRUE}
+
+```
+
+```{r penguin3-hint-1}
+geom_smooth
+```
+
+
+```{r penguin3-hint-2}
+geom_smooth(method=lm) ### makes a straight line
+
+```
+
+```{r penguin3-solution}
+ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm, colour=species)) + 
+  geom_point()+
+  geom_smooth(method=lm)
+
+###This is why we made colour by species 'global' if we had set it within geom_point(colour=species) we would have to repeat it for geom_smooth(colour=species) but we set it globally so we don't. Much neater code!
+
+```
+
+```{r penguin3-check}
+grade_code ("Swish!")
+
+```
+
+### Exercise 4
+Ok free play time - we managed to add colours to separate points by species, but R just assigned some boring stock colours. We don't have to settle for that  - we can specify whatever colour scheme we want! Try adding colours using this chart and the function `scale_color_manual(values=c())`
+
+```{r fig2, echo = FALSE, out.width = "100%"}
+knitr::include_graphics("winatr02_files/figure-html/colors.png")
+```
+
+```{r penguin4, exercise=TRUE}
+
+```
+
+```{r penguin4-hint-1}
+ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm, colour=species)) + 
+  geom_point()+
+  geom_smooth(method=lm)+
+  scale_color_manual()
+```
+
+
+```{r penguin4-hint-2}
+ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm, colour=species)) + 
+  geom_point()+
+  geom_smooth()+
+  scale_color_manual(values=c())
+```
+
+```{r penguin4-hint-3}
+ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm, colour=species)) + 
+  geom_point()+
+  geom_smooth(method=lm)
+  scale_color_manual(values=c("#00846b","#846b00","#6a0084"))
+```
+
+```{r penguin4-hint-4}
+ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm, colour=species)) + 
+  geom_point()+
+  geom_smooth(method=lm)
+  scale_color_manual(values=c())
 ```
