@@ -15,6 +15,12 @@ library(palmerpenguins)
 knitr::opts_chunk$set(echo = FALSE)
 tutorial_options(exercise.checker = gradethis::grade_learnr)
 
+annual_counts <- read_csv("winatr02_files/figure-html/US.23502006.csv",
+			col_type=cols(PartOfCumulativeCountSeries = col_logical())) %>%
+	filter(PartOfCumulativeCountSeries) %>%
+	mutate(year = year(PeriodStartDate+7)) %>%
+	group_by(year) %>%
+	summarize(count = max(CountValue))
 
 ```
 
